@@ -8,10 +8,79 @@ using System.Text.RegularExpressions;
 
 
 public class RobotOnMoon
-{
+{ 
     public string isSafeCommand(string[] board, string S)
     {
-        return default(string);
+        int i = Array.FindIndex(board, line =>  line.Contains('S'));
+        int j = board[i].IndexOf("S");
+        foreach (char move in S)
+        {
+
+            switch (move)
+            {
+                case 'L':
+                    if (j > 0)
+                    {
+                        if (board[i][j - 1] == '.')
+                        {
+                            j--;
+                        }
+
+                    } else
+                    {
+                        return "Dead";
+                    }
+                    break;
+                case 'R':
+                    if (j < board[0].Length-1)
+                    {
+                        if (board[i][j + 1] == '.')
+                        {
+                            j++;
+                        }
+
+                    }
+                    else
+                    {
+                        return "Dead";
+                    }
+                    break;
+                case 'U':
+                    if(i>0)
+                    {
+                        if (board[i-1][j] == '.')
+                        {
+                            i--;
+                        }
+
+                    }
+                    else
+                    {
+                        return "Dead";
+                    }
+                    break;
+
+                case 'D':
+                    if (i < board.Length-1)
+                    {
+                        if (board[i + 1][j] == '.')
+                        {
+                            i++;
+                        }
+
+                    }
+                    else
+                    {
+                        return "Dead";
+                    }
+                    break;
+
+                default: break;
+
+            }
+                
+        }
+        return "Alive";
     }
 
     #region Testing code
