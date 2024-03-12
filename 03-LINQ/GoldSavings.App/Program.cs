@@ -137,5 +137,33 @@ class Program
         {
             Console.WriteLine($"The price for {goldPrice.Date} is {goldPrice.Price}");
         }
+
+        // lap year
+
+        Func<int, bool> IsLeap = (year) => year%4 == 0;
+
+        Console.WriteLine(IsLeap(2020));
+
+        // Collection
+
+        MyCollection<int> list = new MyCollection<int>(new List<int>() { 0, 1, 2, 3, 4 });
+
+        Console.WriteLine(list.Get(2));
+
+        MyCollection<int> empty = new MyCollection<int>(new List<int>());
+
+        Console.WriteLine(empty.IsEmpty);
+
+        empty.Add(1);
+        empty.Add(2);
+        empty.Add(3);
+        empty.Add(4);
+        empty.Add(5);
+
+        foreach(var item in list)
+        {
+            Console.WriteLine(item.ToString());
+        }
+
     }
 }

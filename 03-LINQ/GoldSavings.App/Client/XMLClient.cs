@@ -31,8 +31,6 @@ namespace GoldSavings.App.Client
         {
             XElement element = XElement.Load(@"C:\magisterka\1sem\tsd2024\03-LINQ\gold.xml");
 
-            //var root = from goldPrices in element.Elements("Root") select goldPrices;
-
             var prices = from goldPrice in element.Elements("GoldPrice")
                          select goldPrice;
 
