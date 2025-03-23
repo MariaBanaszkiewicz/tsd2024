@@ -1,0 +1,13 @@
+<UserControl x:Class="wpf.BookDetailsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="DetailsControl">
+    <Grid>
+        <StackPanel>
+            <TextBox Text="{Binding ElementName=DetailsControl, Path=SelectedBook.Title, Mode=TwoWay}" Margin="5" />
+            <TextBox Text="{Binding ElementName=DetailsControl, Path=SelectedBook.Author, Mode=TwoWay}" Margin="5" />
+            <TextBox Text="{Binding ElementName=DetailsControl, Path=SelectedBook.Publisher, Mode=TwoWay}" Margin="5" />
+            <TextBox Text="{Binding ElementName=DetailsControl, Path=SelectedBook.Year, Mode=TwoWay}" Margin="5" />
+        </StackPanel>
+    </Grid>
+</UserControl>
